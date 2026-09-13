@@ -1029,4 +1029,3 @@ LUFFY/
 - [ ] **luffy/verl/verl/workers/fsdp_worker.py:149520** - @todo: add log prob in all modes
 - [ ] **luffy/verl/verl/workers/fsdp_worker.py:149691** - @todo: add log prob in all modes
 - [ ] **luffy/verl/verl/workers/fsdp_worker.py:149861** - @todo: add log prob in all modes
-- [ [truncated because the content is too long]
