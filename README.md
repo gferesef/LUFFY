@@ -49,29 +49,24 @@ LUFFY/
 
 ### 🔴 High Priority TODOs
 
-- **API Integration**: ✅ OpenAI API client implemented (Gemini still needs completion)
+- **API Integration**: OpenAI and Gemini API implementations need completion
 - **Reward System**: Parallel processing and validation for reward computation  
 - **FSDP Training**: Model loading and distributed training setup
-- **Data Processing**: ✅ Batch dimension folding/unfolding implemented (optimization TODOs remain)
+- **Data Processing**: Batch dimension operations and tensor reshaping
 
 ### 📝 Complete TODO List
 
-- [x] **luffy/deepscaler/utils.py:45** - Implement OpenAI API client initialization
-- [x] **luffy/deepscaler/utils.py:46** - Add proper authentication handling
-- [x] **luffy/deepscaler/utils.py:47** - Implement exponential backoff retry logic for rate limits
-- [x] **luffy/deepscaler/utils.py:48** - Add comprehensive error handling for different API errors
-- [x] **luffy/deepscaler/utils.py:49** - Implement response parsing and validation
-- [ ] **luffy/deepscaler/utils.py:50** - Add logging for API calls and errors
-- [ ] **luffy/deepscaler/utils.py:51** - Support batch processing for multiple prompts
-- [ ] **luffy/deepscaler/utils.py:52** - Add timeout configuration for API calls
-- [ ] **luffy/deepscaler/utils.py:107** - Implement Vertex AI initialization and authentication
-- [ ] **luffy/deepscaler/utils.py:108** - Configure safety settings for content generation
-- [ ] **luffy/deepscaler/utils.py:109** - Set up GenerativeModel with proper system instructions
-- [ ] **luffy/deepscaler/utils.py:110** - Implement retry logic with exponential backoff
-- [ ] **luffy/deepscaler/utils.py:111** - Add comprehensive error handling for API access issues
-- [ ] **luffy/deepscaler/utils.py:112** - Handle rate limiting and quota management
-- [ ] **luffy/deepscaler/utils.py:113** - Implement response validation and text extraction
-- [ ] **luffy/deepscaler/utils.py:114** - Add support for different generation configurations
+- [ ] **luffy/deepscaler/utils.py:45** - Implement OpenAI API client initialization
+- [ ] **luffy/deepscaler/utils.py:46** - Add proper authentication handling
+- [ ] **luffy/deepscaler/utils.py:47** - Implement exponential backoff retry logic for rate limits
+- [ ] **luffy/deepscaler/utils.py:107** - TODO: Implement Vertex AI initialization and authentication
+- [ ] **luffy/deepscaler/utils.py:108** - TODO: Configure safety settings for content generation
+- [ ] **luffy/deepscaler/utils.py:109** - TODO: Set up GenerativeModel with proper system instructions
+- [ ] **luffy/deepscaler/utils.py:110** - TODO: Implement retry logic with exponential backoff
+- [ ] **luffy/deepscaler/utils.py:111** - TODO: Add comprehensive error handling for API access issues
+- [ ] **luffy/deepscaler/utils.py:112** - TODO: Handle rate limiting and quota management
+- [ ] **luffy/deepscaler/utils.py:113** - TODO: Implement response validation and text extraction
+- [ ] **luffy/deepscaler/utils.py:114** - TODO: Add support for different generation configurations
 - [ ] **luffy/test.py:1590** - add smaller page sizes when https://github.com/Dao-AILab/flash-attention/pull/824 is merged
 - [ ] **luffy/verl/examples/split_placement/split_monkey_patch.py:141** - make a canonical logger that supports various backend
 - [ ] **luffy/verl/tests/e2e/check_results.py:21** - this function needs error handling
@@ -102,6 +97,7 @@ LUFFY/
 - [ ] **luffy/verl/verl/mix_src/mix_trainer_acc_rebatch.py:437** - make a canonical logger that supports various backend
 - [ ] **luffy/verl/verl/mix_src/mix_trainer_acc_rebatch.py:592** - check path
 - [ ] **luffy/verl/verl/mix_src/mix_trainer_acc_rebatch.py:628** - from remote not implemented yet
+- [ ] **luffy/verl/verl/mix_src/mix_vllm_rollout.py:43** - TODO
 - [ ] **luffy/verl/verl/models/llama/megatron/layers/parallel_attention.py:380** - llama does not have dropout in the config??
 - [ ] **luffy/verl/verl/models/llama/megatron/layers/parallel_decoder.py:78** - add sequence parallel operator reduce_scatter here
 - [ ] **luffy/verl/verl/models/llama/megatron/layers/parallel_decoder.py:86** - add sequence parallel operator all_gather here
@@ -110,922 +106,207 @@ LUFFY/
 - [ ] **luffy/verl/verl/models/llama/megatron/modeling_llama_megatron.py:588** - for better performance, the sp padding should be removed at each layer. Not sure the performance gap
 - [ ] **luffy/verl/verl/models/registry.py:21** - (sgm): HF may supported more than listed here, we should add more after testing
 - [ ] **luffy/verl/verl/models/transformers/llama.py:88** - These transpose are quite inefficient but Flash Attention requires the layout [batch_size, sequence_length, num_heads, head_dim]. We would need to refactor the KV cache
-- [x] **luffy/verl/verl/protocol.py:114** - Implement batch dimension folding for efficient processing
-- [x] **luffy/verl/verl/protocol.py:115** - Add validation for batch size compatibility
-- [x] **luffy/verl/verl/protocol.py:116** - Handle edge cases where batch_size is not divisible by new_batch_size
-- [ ] **luffy/verl/verl/protocol.py:117** - Optimize memory usage during tensor reshaping
-- [ ] **luffy/verl/verl/protocol.py:118** - Add support for different tensor types and shapes
-- [ ] **luffy/verl/verl/protocol.py:136** - Optimize tensor view operations for performance
-- [ ] **luffy/verl/verl/protocol.py:137** - Add error handling for invalid batch dimensions
-- [ ] **luffy/verl/verl/protocol.py:169** - (zhangchi.usc1992) add consistency check
-- [ ] **luffy/verl/verl/protocol.py:265** - we can actually lift this restriction if needed
-- [ ] **luffy/verl/verl/protocol.py:351** - (zhangchi.usc1992) whether to copy
+- [ ] **luffy/verl/verl/protocol.py:114** - Implement batch dimension folding for efficient processing
+- [ ] **luffy/verl/verl/protocol.py:115** - Add validation for batch size compatibility
+- [ ] **luffy/verl/verl/protocol.py:136** - TODO: Optimize tensor view operations for performance
+- [ ] **luffy/verl/verl/protocol.py:137** - TODO: Add error handling for invalid batch dimensions
+- [ ] **luffy/verl/verl/protocol.py:169** - TODO(zhangchi.usc1992) add consistency check
+- [ ] **luffy/verl/verl/protocol.py:265** - TODO: we can actually lift this restriction if needed
+- [ ] **luffy/verl/verl/protocol.py:351** - TODO (zhangchi.usc1992) whether to copy
 - [ ] **luffy/verl/verl/single_controller/ray/base.py:439** - create a class with customizable name
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/arg_utils.py:64** - (shengguangming): delete the unused args
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/arg_utils.py:147** - (woosuk): Support fine-grained seeds (e.g., seed per request).
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm.py:237** - (shengguangming): maybe we can hack the autoregressive logics without only logits
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm.py:315** - (shengguangming): maybe we can hack the autoregressive logics without only logits
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/worker.py:222** - @todo: support custom sampling parameters
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm.py:237** - (shengguangming): maybe we can hack the autoregressive logics without only apply post process for better performance
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm.py:241** - (sgm): we can optimize it by making the dataloader yield List[int] without padding.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm.py:257** - (shengguangming): can be optimzied by rewrite the Sampler._get_logprobs() logits
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm_engine_sp.py:99** - (woosuk): Print more configs in debug mode.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm_engine_sp.py:101** - currently is hfconfig
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm_engine_sp.py:112** - (shengguangming): maybe we can choose init here or from arguments
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm_engine_sp.py:145** - check get_lora_tokenizer func
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm_engine_sp.py:586** - check this input
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/llm_engine_sp.py:661** - we may not need to decode
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/model_loader.py:67** - (shengguangming): latest commit in vllm fix awq for this function and add load_weights
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/model_loader.py:96** - (pad to be divided by 4)
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/model_loader.py:224** - (zhuohan): Change the get_logits part to a separate stage.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/tokenizer.py:56** - (sgm): the lora tokenizer is also passed, but may be different
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/weight_loaders.py:62** - check megatron
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/weight_loaders.py:84** - need to implement a general way to deal with prefix
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/worker.py:109** - do not use cupy
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/worker.py:209** - (woosuk): Profile swapping overhead and optimize if needed.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_3_1/worker.py:291** - (shengguangming): maybe we should also flag the megatron is initialized
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/arg_utils.py:44** - TODO
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/arg_utils.py:109** - (shengguangming): delete the unused args
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/arg_utils.py:192** - (woosuk): Support fine-grained seeds (e.g., seed per request).
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/arg_utils.py:257** - spec config
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm.py:269** - (shengguangming): maybe we can hack the autoregressive logics without only logits
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm.py:347** - (shengguangming): maybe we can hack the autoregressive logics without only logits
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/worker.py:237** - @todo: support custom sampling parameters
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/config.py:136** - for multimodal model
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/hf_weight_loader.py:81** - TODO
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm.py:268** - (shengguangming): maybe we can hack the autoregressive logics without only apply post process for better performance
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm.py:272** - (sgm): we can optimize it by making the dataloader yield List[int] without padding.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm.py:288** - (shengguangming): can be optimzied by rewrite the Sampler._get_logprobs() logits
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:128** - (woosuk): Print more configs in debug mode.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:130** - currently is hfconfig
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:143** - (shengguangming): maybe we can choose init here or from arguments
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:145** - check tokenizer class
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:153** - don't know what's the usage
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:228** - (sgm): add for verl but we may not tokenizer in Rollout
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/llm_engine_sp.py:237** - check whether we should rebuild the CUDAGraph every iter when offload/load KVCache
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/megatron_weight_loaders.py:67** - check megatron
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/megatron_weight_loaders.py:254** - need to implement a general way to deal with prefix
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/megatron_weight_loaders.py:272** - (shengguangming): latest commit in vllm fix awq for this function and add load_weights
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/megatron_weight_loaders.py:325** - TODO (pad to be divided by 4)
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/megatron_weight_loaders.py:337** - TODO: remove dependencies from megatron
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/model_loader.py:141** - (sgm): This is a hack, we need to register the load_weight() func for each model in vllm
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/model_loader.py:226** - (sgm): This is a hack, we need to register the load_weight() func for each model in vllm
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/model_runner.py:274** - (sgm): perform sampling on rank 0
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/parallel_state.py:236** - this will hang
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/parallel_state.py:245** - will hang when used with device mesh
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/parallel_state.py:247** - init using device mesh
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/spmd_gpu_executor.py:62** - (sgm): verl not support speculative decode now
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/spmd_gpu_executor.py:208** - (sgm): not implemented async executor yet
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/tokenizer.py:61** - (sgm): the lora tokenizer is also passed, but may be different
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/worker.py:30** - (sgm): check why vllm has similar file in vllm.model_executor.parallel_utils.parallel_state
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_4_2/worker.py:270** - (sgm): check whether need this
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/arg_utils.py:53** - (sgm): check this
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/arg_utils.py:54** - (sgm): check this
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/arg_utils.py:143** - (shengguangming): delete the unused args
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/arg_utils.py:226** - (woosuk): Support fine-grained seeds (e.g., seed per request).
 - [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/arg_utils.py:366** - spec config
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/llm.py:297** - (shengguangming): maybe we can hack the autoregressive logics without only logits
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/llm.py:379** - (shengguangming): maybe we can hack the autoregressive logics without only logits
-- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/worker.py:262** - @todo: support custom sampling parameters
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/config.py:191** - check whether this is necessary
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/hf_weight_loader.py:32** - TODO
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/llm.py:148** - check usagecontext
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/llm.py:205** - (sgm): we can optimize it by making the dataloader yield List[int] without padding.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/llm.py:221** - (shengguangming): can be optimzied by rewrite the Sampler._get_logprobs() logits
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/llm_engine_sp.py:143** - (woosuk): Print more configs in debug mode.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/llm_engine_sp.py:160** - (shengguangming): maybe we can choose init here or from arguments
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/llm_engine_sp.py:262** - (sgm): add for verl but we may not tokenizer in Rollout
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/llm_engine_sp.py:271** - check whether we should rebuild the CUDAGraph every iter when offload/load KVCache
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/megatron_weight_loaders.py:67** - check megatron
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/megatron_weight_loaders.py:254** - need to implement a general way to deal with prefix
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/megatron_weight_loaders.py:272** - (shengguangming): latest commit in vllm fix awq for this function and add load_weights
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/model_loader.py:152** - (sgm): This is a hack, we need to register the load_weight() func for each model in vllm
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/model_loader.py:239** - (sgm): This is a hack, we need to register the load_weight() func for each model in vllm
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/parallel_state.py:94** - (sgm): deviate from the v0.5.4, not pp now
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/parallel_state.py:138** - check why True is not work in Ray trainer
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/parallel_state.py:165** - check why True is not work in Ray trainer
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/parallel_state.py:177** - init using device mesh (not support hybrid engine now)
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/parallel_state.py:249** - check why True is not work in Ray trainer
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/parallel_state.py:253** - init using device mesh (not support hybrid engine now)
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/spmd_gpu_executor.py:65** - (sgm): verl not support speculative decode now
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/spmd_gpu_executor.py:243** - (sgm): not implemented async executor yet
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/tokenizer.py:61** - (sgm): the lora tokenizer is also passed, but may be different
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/worker.py:29** - (sgm): check why vllm has similar file in vllm.model_executor.parallel_utils.parallel_state
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/worker.py:84** - we don't need driver
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/worker.py:103** - (sgm): set correct model runner class
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_5_4/worker.py:301** - (sgm): check whether need this
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/hf_weight_loader.py:29** - TODO
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/llm.py:147** - TODO: check usagecontext
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/llm.py:170** - TODO(sgm): we can optimize it by making the dataloader yield List[int] without padding.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/llm.py:186** - TODO(shengguangming): can be optimzied by rewrite the Sampler._get_logprobs() logits
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/llm_engine_sp.py:174** - TODO(woosuk): Print more configs in debug mode.
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/llm_engine_sp.py:336** - TODO(sgm): add for verl but we may not tokenizer in Rollout
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/llm_engine_sp.py:345** - TODO: check whether we should rebuild the CUDAGraph every iter when offload/load KVCache
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/megatron_weight_loaders.py:68** - TODO: check megatron
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/megatron_weight_loaders.py:255** - TODO: need to implement a general way to deal with prefix
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/megatron_weight_loaders.py:273** - TODO(shengguangming): latest commit in vllm fix awq for this function and add load_weights
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/model_loader.py:170** - TODO(sgm): This is a hack, we need to register the load_weight() func for each model in vllm
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/model_loader.py:273** - TODO(sgm): This is a hack, we need to register the load_weight() func for each model in vllm
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/parallel_state.py:97** - TODO(sgm): deviate from the v0.5.4, not pp now
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/parallel_state.py:144** - TODO: check why True is not work in Ray trainer
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/parallel_state.py:172** - TODO: check why True is not work in Ray trainer
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/parallel_state.py:185** - TODO: init using device mesh (not support hybrid engine now)
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/parallel_state.py:257** - TODO: check why True is not work in Ray trainer
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/parallel_state.py:262** - TODO: init using device mesh (not support hybrid engine now)
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/spmd_gpu_executor.py:73** - TODO(sgm): verl not support speculative decode now
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/spmd_gpu_executor.py:246** - TODO(sgm): not implemented async executor yet
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/worker.py:33** - TODO(sgm): check why vllm has similar file in vllm.model_executor.parallel_utils.parallel_state
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/worker.py:92** - TODO: we don't need driver
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/worker.py:110** - TODO(sgm): set correct model runner class
+- [ ] **luffy/verl/verl/third_party/vllm/vllm_v_0_6_3/worker.py:311** - TODO(sgm): check whether need this
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:77** - add checkpoint manager
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:140** - (zhangchi.usc1992):
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:159** - Implement model loading with proper initialization context
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:160** - Add support for different model types and configurations
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:161** - Implement memory-efficient model loading for large models
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:162** - Add model validation and compatibility checks
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:165** - Complete model loading implementation
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:166** - Add support for custom model architectures
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:167** - Implement proper dtype and attention configuration
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:170** - Implement gradient checkpointing configuration
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:171** - Add memory usage optimization strategies
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:172** - Configure mixed precision training settings
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:173** - Implement FSDP sharding and wrapping policies
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:174** - Add CPU offloading configuration for memory optimization
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:175** - Set up distributed training parameters properly
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:178** - Initialize FSDP wrapped model
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:301** - add a unified tracking
+- [ ] **luffy/verl/verl/trainer/fsdp_sft_trainer.py:318** - (zhangchi.usc1992) add back checkpoint manager. Currently, it blocks when uploading to hdfs. So very slow.
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:50** - Implement reward computation for different data sources
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:53** - Add support for parallel processing of reward computation
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:54** - Implement proper sequence decoding and validation
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:55** - Add thread-safe logging and debugging functionality
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:56** - Optimize memory usage for large batch processing
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:62** - Extract and validate prompt and response sequences
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:63** - Decode sequences to text format
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:64** - Apply appropriate reward function based on data source
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:65** - Handle edge cases and error conditions
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:70** - Implement batch-wise reward computation
+- [ ] **luffy/verl/verl/trainer/main_ppo.py:71** - Add proper error handling and validation
+- [ ] **luffy/verl/verl/trainer/ppo/ray_trainer.py:129** - add other ways to estimate advantages
+- [ ] **luffy/verl/verl/trainer/ppo/ray_trainer.py:207** - add response length
+- [ ] **luffy/verl/verl/trainer/ppo/ray_trainer.py:330** - support each role have individual ray_worker_group_cls,
+- [ ] **luffy/verl/verl/trainer/ppo/ray_trainer.py:379** - we have to make sure the batch size is divisible by the dp size
+- [ ] **luffy/verl/verl/trainer/ppo/ray_trainer.py:632** - check path
+- [ ] **luffy/verl/verl/trainer/ppo/ray_trainer.py:667** - from remote not implemented yet
+- [ ] **luffy/verl/verl/trainer/ppo/ray_trainer.py:880** - make a canonical logger that supports various backend
+- [ ] **luffy/verl/verl/utils/checkpoint/fsdp_checkpoint_manager.py:101** - shall we remove previous ckpt every save?
+- [ ] **luffy/verl/verl/utils/checkpoint/fsdp_checkpoint_manager.py:135** - address optimizer is None
+- [ ] **luffy/verl/verl/utils/hdfs_io.py:67** - (haibin.lin):
+- [ ] **luffy/verl/verl/utils/hdfs_io.py:102** - (haibin.lin):
 - [ ] **luffy/verl/verl/utils/megatron_utils.py:202** - (sgm): check how to disable megatron timers
-- [ ] **luffy/verl/verl/utils/megatron_utils.py:247** - (sgm): check how to disable megatron timers
-- [ ] **luffy/verl/verl/utils/ray_utils.py:13** - (sgm): make this a util function instead of a hook
-- [ ] **luffy/verl/verl/utils/ray_utils.py:29** - (sgm): make this a util function instead of a hook
-- [ ] **luffy/verl/verl/utils/ray_utils.py:46** - (sgm): make this a util function instead of a hook
-- [ ] **luffy/verl/verl/utils/ray_utils.py:67** - (sgm): make this a util function instead of a hook
-- [ ] **luffy/verl/verl/utils/ray_utils.py:93** - (sgm): make this a util function instead of a hook
-- [ ] **luffy/verl/verl/utils/ray_utils.py:123** - (sgm): make this a util function instead of a hook
-- [ ] **luffy/verl/verl/workers/dp_worker.py:197** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/dp_worker.py:360** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/dp_worker.py:540** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/dp_worker.py:705** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:421** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:584** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:750** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:914** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:1085** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:1255** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:1425** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:1596** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:1766** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:1937** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:2107** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:2278** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:2449** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:2619** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:2790** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:2960** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:3131** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:3301** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:3472** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:3643** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:3813** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:3984** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:4154** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:4325** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:4495** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:4666** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:4836** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:5007** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:5177** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:5348** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:5518** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:5689** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:5859** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:6030** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:6200** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:6371** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:6541** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:6712** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:6882** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:7053** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:7223** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:7394** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:7564** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:7735** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:7905** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:8076** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:8246** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:8417** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:8587** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:8758** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:8928** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:9099** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:9269** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:9440** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:9610** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:9781** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:9951** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:10122** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:10292** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:10463** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:10633** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:10804** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:10974** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:11145** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:11315** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:11486** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:11656** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:11827** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:11997** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:12168** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:12338** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:12509** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:12679** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:12850** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:13020** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:13191** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:13361** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:13532** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:13702** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:13873** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:14043** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:14214** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:14384** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:14555** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:14725** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:14896** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:15066** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:15237** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:15407** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:15578** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:15748** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:15919** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:16089** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:16260** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:16430** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:16601** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:16771** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:16942** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:17112** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:17283** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:17453** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:17624** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:17794** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:17965** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:18135** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:18306** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:18476** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:18647** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:18817** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:18988** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:19158** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:19329** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:19499** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:19670** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:19840** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:20011** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:20181** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:20352** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:20522** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:20693** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:20863** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:21034** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:21204** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:21375** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:21545** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:21716** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:21886** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:22057** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:22227** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:22398** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:22568** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:22739** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:22909** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:23080** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:23250** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:23421** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:23591** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:23762** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:23932** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:24103** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:24273** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:24444** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:24614** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:24785** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:24955** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:25126** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:25296** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:25467** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:25637** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:25808** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:25978** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:26149** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:26319** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:26490** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:26660** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:26831** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:27001** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:27172** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:27342** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:27513** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:27683** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:27854** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:28024** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:28195** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:28365** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:28536** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:28706** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:28877** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:29047** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:29218** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:29388** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:29559** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:29729** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:29900** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:30070** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:30241** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:30411** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:30582** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:30752** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:30923** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:31093** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:31264** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:31434** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:31605** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:31775** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:31946** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:32116** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:32287** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:32457** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:32628** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:32798** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:32969** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:33139** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:33310** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:33480** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:33651** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:33821** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:33992** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:34162** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:34333** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:34503** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:34674** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:34844** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:35015** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:35185** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:35356** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:35526** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:35697** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:35867** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:36038** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:36208** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:36379** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:36549** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:36720** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:36890** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:37061** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:37231** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:37402** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:37572** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:37743** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:37913** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:38084** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:38254** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:38425** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:38595** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:38766** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:38936** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:39107** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:39277** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:39448** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:39618** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:39789** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:39959** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:40130** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:40300** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:40471** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:40641** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:40812** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:40982** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:41153** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:41323** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:41494** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:41664** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:41835** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:42005** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:42176** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:42346** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:42517** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:42687** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:42858** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:43028** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:43199** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:43369** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:43540** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:43710** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:43881** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:44051** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:44222** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:44392** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:44563** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:44733** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:44904** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:45074** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:45245** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:45415** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:45586** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:45756** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:45927** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:46097** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:46268** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:46438** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:46609** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:46779** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:46950** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:47120** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:47291** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:47461** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:47632** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:47802** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:47973** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:48143** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:48314** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:48484** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:48655** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:48825** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:48996** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:49166** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:49337** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:49507** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:49678** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:49848** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:50019** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:50189** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:50360** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:50530** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:50701** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:50871** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:51042** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:51212** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:51383** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:51553** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:51724** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:51894** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:52065** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:52235** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:52406** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:52576** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:52747** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:52917** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:53088** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:53258** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:53429** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:53599** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:53770** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:53940** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:54111** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:54281** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:54452** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:54622** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:54793** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:54963** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:55134** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:55304** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:55475** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:55645** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:55816** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:55986** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:56157** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:56327** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:56498** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:56668** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:56839** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:57009** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:57180** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:57350** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:57521** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:57691** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:57862** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:58032** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:58203** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:58373** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:58544** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:58714** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:58885** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:59055** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:59226** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:59396** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:59567** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:59737** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:59908** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:60078** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:60249** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:60419** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:60590** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:60760** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:60931** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:61101** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:61272** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:61442** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:61613** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:61783** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:61954** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:62124** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:62295** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:62465** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:62636** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:62806** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:62977** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:63147** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:63318** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:63488** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:63659** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:63829** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:64000** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:64170** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:64341** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:64511** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:64682** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:64852** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:65023** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:65193** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:65364** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:65534** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:65705** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:65875** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:66046** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:66216** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:66387** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:66557** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:66728** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:66898** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:67069** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:67239** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:67410** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:67580** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:67751** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:67921** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:68092** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:68262** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:68433** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:68603** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:68774** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:68944** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:69115** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:69285** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:69456** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:69626** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:69797** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:69967** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:70138** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:70308** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:70479** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:70649** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:70820** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:70990** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:71161** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:71331** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:71502** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:71672** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:71843** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:72013** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:72184** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:72354** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:72525** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:72695** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:72866** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:73036** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:73207** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:73377** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:73548** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:73718** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:73889** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:74059** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:74230** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:74400** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:74571** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:74741** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:74912** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:75082** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:75253** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:75423** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:75594** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:75764** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:75935** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:76105** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:76276** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:76446** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:76617** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:76787** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:76958** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:77128** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:77299** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:77469** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:77640** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:77810** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:77981** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:78151** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:78322** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:78492** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:78663** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:78833** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:79004** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:79174** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:79345** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:79515** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:79686** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:79856** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:80027** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:80197** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:80368** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:80538** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:80709** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:80879** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:81050** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:81220** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:81391** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:81561** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:81732** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:81902** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:82073** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:82243** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:82414** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:82584** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:82755** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:82925** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:83096** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:83266** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:83437** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:83607** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:83778** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:83948** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:84119** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:84289** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:84460** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:84630** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:84801** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:84971** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:85142** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:85312** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:85483** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:85653** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:85824** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:85994** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:86165** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:86335** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:86506** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:86676** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:86847** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:87017** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:87188** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:87358** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:87529** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:87699** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:87870** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:88040** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:88211** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:88381** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:88552** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:88722** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:88893** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:89063** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:89234** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:89404** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:89575** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:89745** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:89916** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:90086** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:90257** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:90427** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:90598** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:90768** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:90939** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:91109** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:91280** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:91450** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:91621** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:91791** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:91962** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:92132** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:92303** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:92473** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:92644** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:92814** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:92985** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:93155** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:93326** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:93496** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:93667** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:93837** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:94008** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:94178** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:94349** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:94519** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:94690** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:94860** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:95031** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:95201** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:95372** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:95542** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:95713** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:95883** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:96054** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:96224** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:96395** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:96565** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:96736** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:96906** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:97077** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:97247** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:97418** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:97588** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:97759** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:97929** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:98100** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:98270** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:98441** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:98611** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:98782** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:98952** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:99123** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:99293** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:99464** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:99634** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:99805** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:99975** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:100146** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:100316** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:100487** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:100657** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:100828** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:100998** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:101169** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:101339** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:101510** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:101680** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:101851** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:102021** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:102192** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:102362** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:102533** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:102703** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:102874** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:103044** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:103215** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:103385** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:103556** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:103726** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:103897** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:104067** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:104238** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:104408** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:104579** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:104749** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:104920** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:105090** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:105261** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:105431** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:105602** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:105772** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:105943** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:106113** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:106284** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:106454** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:106625** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:106795** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:106966** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:107136** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:107307** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:107477** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:107648** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:107818** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:107989** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:108159** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:108330** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:108500** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:108671** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:108841** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:109012** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:109182** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:109353** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:109523** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:109694** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:109864** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:110035** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:110205** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:110376** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:110546** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:110717** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:110887** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:111058** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:111228** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:111399** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:111569** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:111740** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:111910** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:112081** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:112251** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:112422** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:112592** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:112763** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:112933** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:113104** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:113274** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:113445** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:113615** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:113786** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:113956** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:114127** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:114297** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:114468** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:114638** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:114809** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:114979** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:115150** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:115320** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:115491** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:115661** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:115832** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:116002** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:116173** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:116343** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:116514** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:116684** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:116855** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:117025** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:117196** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:117366** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:117537** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:117707** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:117878** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:118048** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:118219** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:118389** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:118560** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:118730** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:118901** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:119071** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:119242** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:119412** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:119583** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:119753** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:119924** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:120094** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:120265** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:120435** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:120606** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:120776** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:120947** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:121117** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:121288** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:121458** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:121629** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:121799** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:121970** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:122140** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:122311** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:122481** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:122652** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:122822** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:122993** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:123163** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:123334** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:123504** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:123675** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:123845** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:124116** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:124286** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:124457** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:124627** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:124798** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:124968** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:125139** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:125309** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:125480** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:125650** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:125821** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:125991** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:126162** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:126332** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:126503** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:126673** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:126844** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:127014** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:127185** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:127355** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:127526** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:127696** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:127867** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:128037** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:128208** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:128378** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:128549** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:128719** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:128890** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:129060** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:129231** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:129401** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:129572** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:129742** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:129913** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:130083** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:130254** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:130424** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:130595** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:130765** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:130936** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:131106** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:131277** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:131447** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:131618** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:131788** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:131959** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:132129** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:132300** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:132470** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:132641** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:132811** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:132982** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:133152** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:133323** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:133493** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:133664** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:133834** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:134005** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:134175** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:134346** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:134516** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:134687** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:134857** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:135028** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:135198** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:135369** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:135539** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:135710** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:135880** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:136051** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:136221** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:136392** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:136562** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:136733** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:136903** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:137074** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:137244** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:137415** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:137585** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:137756** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:137926** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:138097** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:138267** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:138438** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:138608** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:138779** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:138949** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:139120** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:139290** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:139461** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:139631** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:139802** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:139972** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:140143** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:140313** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:140484** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:140654** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:140825** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:140995** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:141166** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:141336** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:141507** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:141677** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:141848** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:142018** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:142189** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:142359** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:142530** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:142700** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:142871** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:143041** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:143212** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:143382** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:143553** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:143723** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:143894** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:144064** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:144235** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:144405** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:144576** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:144746** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:144917** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:145087** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:145258** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:145428** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:145599** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:145769** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:145940** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:146110** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:146281** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:146451** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:146622** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:146792** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:146963** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:147133** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:147304** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:147474** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:147645** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:147815** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:147986** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:148156** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:148327** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:148497** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:148668** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:148838** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:149009** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:149179** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:149350** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:149520** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:149691** - @todo: add log prob in all modes
-- [ ] **luffy/verl/verl/workers/fsdp_worker.py:149861** - @todo: add log prob in all modes
+- [ ] **luffy/verl/verl/utils/model.py:164** - we can make this faster
+- [ ] **luffy/verl/verl/utils/model.py:272** - to find a better way to load mistral7b-rm lm_head
+- [ ] **luffy/verl/verl/utils/torch_functional.py:362** - add them back
+- [ ] **luffy/verl/verl/workers/actor/megatron_actor.py:158** - (zhangchi.usc1992): actually, this function should only return log_prob and this logic should be handled by user outside
+- [ ] **luffy/verl/verl/workers/actor/megatron_actor.py:225** - actually, we just need to control the sampling order.
+- [ ] **luffy/verl/verl/workers/actor/megatron_actor.py:301** - we may use the new schedule instead
+- [ ] **luffy/verl/verl/workers/critic/megatron_critic.py:176** - we may use the new schedule instead
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:88** - (sgm): support FSDP hybrid shard for larger model
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:117** - it seems that manual offload is slowly than FSDP offload
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:157** - (zhangchi.usc1992): 1. support create from random initialized model. 2. Support init with FSDP directly
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:225** - (zhangchi.usc1992, shengguangming) fix me. Current, auto_wrap_policy causes HFRollout to hang in Gemma
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:233** - add transformer policy
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:252** - add more optimizer args into config
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:278** - (sgm): support FSDP hybrid shard for larger model
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:289** - a sharding manager that do nothing?
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:416** - here, we should return all metrics
+- [ ] **luffy/verl/verl/workers/fsdp_workers.py:811** - (sgm): we may need to extract it to dp_reward_model.py
+- [ ] **luffy/verl/verl/workers/megatron_workers.py:106** - (sgm): Currently, we only support reference model param offload
+- [ ] **luffy/verl/verl/workers/megatron_workers.py:204** - add more optimizer args into config
+- [ ] **luffy/verl/verl/workers/megatron_workers.py:338** - here, we should return all metrics
+- [ ] **luffy/verl/verl/workers/megatron_workers.py:444** - (sgm): support critic model offload
+- [ ] **luffy/verl/verl/workers/megatron_workers.py:478** - support vpp here
+- [ ] **luffy/verl/verl/workers/megatron_workers.py:507** - add more optimizer args into config
+- [ ] **luffy/verl/verl/workers/megatron_workers.py:667** - add more optimizer args into config
+- [ ] **luffy/verl/verl/workers/megatron_workers.py:720** - reward model use itself tokenizer instead of sft tokenizer
+- [ ] **luffy/verl/verl/workers/reward_model/megatron/reward_model.py:145** - (sgm): check why is bfloat16
+- [ ] **luffy/verl/verl/workers/reward_model/megatron/reward_model.py:192** - actually, we just need to control the sampling order.
+- [ ] **luffy/verl/verl/workers/reward_model/megatron/reward_model.py:233** - we may use the new schedule instead
+- [ ] **luffy/verl/verl/workers/rollout/hf_rollout.py:98** - filter out the seq with no answers like ds-chat
+- [ ] **luffy/verl/verl/workers/rollout/vllm_rollout/vllm_rollout.py:43** - TODO
+- [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_ulysses.py:49** - check how to set seed for each model
+- [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_ulysses.py:56** - check how to set seed for each model
+- [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_vllm.py:82** - offload FSDP model weights
+- [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_vllm.py:113** - Current impl doesn't consider FSDP with torch micro-dp
+- [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_vllm.py:122** - Current impl doesn't consider FSDP with torch micro-dp
+- [ ] **luffy/verl/verl/workers/sharding_manager/fsdp_vllm.py:130** - shall we build a micro_dp group for vllm when integrating with vLLM?
+- [ ] **luffy/verl/verl/workers/sharding_manager/megatron_vllm.py:76** - after binding to the memory buffer, we can load the checkpoint here
+- [ ] **luffy/verl/verl/workers/sharding_manager/megatron_vllm.py:253** - (sgm): this may not be true for FSDP -> vLLM
+- [ ] **luffy/verl/verl/workers/sharding_manager/megatron_vllm.py:323** - (zhangchi.usc1992) We can consider copy non-tp weight to another infer buffer.
+
+## 🤝 Contributing
+
+1. Pick a TODO item from the list above
+2. Implement the functionality
+3. Test your implementation
+4. Update this README when TODOs are completed
+
